@@ -12,7 +12,6 @@ public class UserRegistration {
         String firstName = sc.nextLine();
 
         boolean fName = Pattern.matches("^[A-Z]+[a-z]{3,}$", firstName);
-        System.out.println(firstName);
 
         if (fName) {
             System.out.println("firstname is correct ");
