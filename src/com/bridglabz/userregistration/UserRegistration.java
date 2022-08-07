@@ -7,21 +7,20 @@ public class UserRegistration {
 
     public static void main(String[] args) {
         UserRegistration check = new UserRegistration();
-        check.validPassword();
+        check.validEmail();
     }
 
-
-    public static void validPassword(){
+    public static void validEmail(){
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter user password");
-        String password = sc.nextLine();
+        System.out.println("Enter user Email: ");
+        String email = sc.nextLine();
 
-        boolean validatePassword = Pattern.matches("(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*@#$%^&*+=]).{8,}$",password);
+        boolean validatePassword = Pattern.matches("^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$",email);
         if(validatePassword){
-            System.out.println("password is valid");
+            System.out.println("Email is valid");
         }
         else{
-            System.out.println("password is invalid");
+            System.out.println("Email is invalid");
         }
     }
 }
